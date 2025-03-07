@@ -1,11 +1,16 @@
-part of 'home_bloc.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:flutter_application_1/core/constants/app_constants.dart';
 
-enum TodoStatus { initial, loading, success, error }
+class HomeState {
+  final Status status;
+  final QuerySnapshot? todos;
 
-@freezed
-class TodoState with _$TodoState {
-  const factory TodoState({
-    @Default(TodoStatus.initial) TodoStatus status,
-    QuerySnapshot? todos,
-  }) = _TodoState;
+  HomeState({this.status = Status.initial, this.todos});
+
+  HomeState copyWith({Status? status, QuerySnapshot? todos}) {
+    return HomeState(
+      status: status ?? this.status,
+      todos: todos ?? this.todos,
+    );
+  }
 }
