@@ -1,8 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/controllers/todo_firebase_controllers.dart';
-import 'package:flutter_application_1/models/todo.dart';
-import 'package:flutter_application_1/services/local_notification_services.dart';
+import 'package:flutter_application_1/features/home/data/model/todo.dart';
 import 'package:flutter_application_1/features/home/presentation/widgets/add_todo_modal_sheet.dart';
 
 class HomeScreen extends StatefulWidget {
